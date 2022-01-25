@@ -4,6 +4,8 @@
 const bool red = true;
 const bool black = false;
 
+
+///Node for Tree based structures
 template <typename T, typename T2>
 struct node {
         T key;
@@ -15,13 +17,26 @@ struct node {
         node() { }
 };
 
+
+///Dobuly linked list structures,
 template <typename T>
 struct lnode {
         T info;
         lnode* next;
         lnode* prev;
         lnode(T _info) : info(_info), next(nullptr) { }
-        node() { }
+        lnode() { }
+};
+
+
+///singly linked list strucutres, (Queue, Stack, Forward_list)
+template <typename T>
+struct snode {
+        T info;
+        snode* next;
+        snode(T _info) : info(_info), next(nullptr) { }
+        snode(T _info, snode* _next) : info(_info), next(_next) { }
+        snode() { }
 };
 
 #endif
