@@ -39,4 +39,38 @@ struct snode {
         snode() { }
 };
 
+///for use in pq heap
+template <typename T, typename T2 = int>
+struct pqnode {
+        T info;
+        T2 priority;
+        pqnode(T _info, T2 _priority)
+        {
+                info = _info;
+                priority = _priority;
+        }
+        pqnode()
+        {
+
+        }
+        bool operator<(const pqnode& other) const {
+                return (this->priority < other.priority);
+        }
+        bool operator>(const pqnode& other) const {
+                return (this->priority > other.priority);
+        }
+        bool operator<=(const pqnode& other) const {
+                return (this->priority <= other.priority);
+        }
+        bool operator>=(const pqnode& other) const {
+                return (this->priority >= other.priority);
+        }
+        bool operator==(const pqnode& other) const {
+                return (this->priority == other.priority);
+        }
+        bool operator!=(const pqnode& other) const {
+                return !(this->priority == other.priority);
+        }
+};
+
 #endif
